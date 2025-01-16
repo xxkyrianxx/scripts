@@ -385,7 +385,7 @@ while [[ $exit == false ]]; do
 			4)
 				funcion_cabezera "Instalacion de programas (flatpak, compresores, codecs, discord, sublime text, gimp... etc)"
 				emerge -$binarios sys-apps/flatpak 
-				echo "matrosca x265 lua" > /etc/portage/package.use/vlc
+				echo "matrosca x265 lua nvenc" > /etc/portage/package.use/vlc
 				emerge -$binarios media-video/vlc
 				echo "bzip2 crypt natspec unicode" > /etc/portage/package.use/zip
 				emerge -$binarios app-arch/zip
@@ -397,6 +397,9 @@ while [[ $exit == false ]]; do
 				emerge -$binarios media-gfx/gimp
 				emerge -$binarios net-im/discord
 				emerge -$binarios app-editors/sublime-text
+				echo "nvenc" > /etc/portage/package.use/mpv
+				emerge -$binarios media-video/mpv
+
 
 
 
